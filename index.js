@@ -31,12 +31,15 @@ async function invokeAction({ action, id, name, email, phone }) {
         email,
         phone
       );
-      console.log(newContact);
+      console.table(newContact);
       break;
 
     case "remove":
       const newContactList = await contactsOperations.removeContact(id);
-      console.log(newContactList);
+      if (!newContactList) {
+        throw new Error(`contact with id=${id} not found`);
+      }
+      console.table(newContactList);
       break;
 
     default:
