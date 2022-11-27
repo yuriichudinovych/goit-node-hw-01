@@ -32,7 +32,6 @@ async function invokeAction({ action, id, name, email, phone }) {
         phone
       );
       console.log(newContact);
-      // ... name email phone
       break;
 
     case "remove":
@@ -44,7 +43,4 @@ async function invokeAction({ action, id, name, email, phone }) {
       console.warn("\x1B[31m Unknown action type!");
   }
 }
-
-// invokeAction({ action: "list" });
-// invokeAction({ action: "get", id: 4 });
 invokeAction(argv);
